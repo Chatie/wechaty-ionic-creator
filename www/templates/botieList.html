@@ -1,0 +1,17 @@
+<ion-view title="Botie List" id="page14">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-arrow-swap" ng-click="toggle('showReorder')"></button>
+  </ion-nav-buttons>
+  <ion-content padding="false" class="has-header">
+    <div id="botieList-markdown17" class="show-list-numbers-and-dots"></div>
+    <ion-list id="botieList-list12" show-delete="showDelete" show-reorder="showReorder">
+      <ion-item class="item-icon-left" id="botieList-list-item41" ui-sref="menu.botie({&quot;id&quot;:&quot;&quot;+ botie.id +&quot;&quot;})" ng-repeat="botie in botieList">
+        <i class="icon ion-help" ng-class="botie.status ? 'ion-social-android' : 'ion-social-android-outline'"></i>{{ botie.nick }}
+        <ion-option-button class="button-balanced" ng-click="delete(botie)">Delete</ion-option-button>
+        <ion-delete-button class="ion-minus-circled" ng-click="delete(botie)"></ion-delete-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="reorder(botie, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+    <a ui-sref="menu.newBotie" id="botieList-button9" class="button button-balanced  button-full button-clear icon ion-android-add"></a>
+  </ion-content>
+</ion-view>

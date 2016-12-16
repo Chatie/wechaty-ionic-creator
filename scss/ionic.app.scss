@@ -1,0 +1,103 @@
+$stable: #f8f8f8;
+$link-color: $stable;
+$SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.4);
+$line-width: 5px;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.night-vision-effect {
+	$url: url(https: //www.gravatar.com/avatar/3c52d1a0af632076ec7752be78cc0421.jpg?s=200);
+	background-image: $url,
+	    radial-gradient(
+	      #0F0,
+	      #000
+	    ),
+	    repeating-linear-gradient(
+	      transparent 0,
+	      rgba(0,0,0,0.1) $line-width/2,
+	      transparent $line-width
+	    );
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: overlay;
+}
+
+.profile-image {
+	img {
+		// filter: grayscale(100%);
+		// blend-mode: multiply;
+		border-radius: 50%;
+		margin: 10px;
+		border: 4px solid $SIDEMENU_TRANSPARENCY;
+		box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+	}
+	
+}
+.top-container {
+	height: calc(100% - 96px);
+	overflow: scroll;
+}
+
+.bottom-form {
+	position: absolute;
+	bottom: 0px;
+	display: block;
+	width: 100%;
+	background-color: white;
+	button {
+		margin: 0px !important;
+	}
+	
+}
+.item-input {
+	border: none !important;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, 
+p, .input-label, .item, .item-content, .item-note, .title, .button {
+	color: $balanced !important;
+}
+
+input[placeholder], [placeholder], *[placeholder] {
+	color: $balanced !important;
+}
+
+input {
+	background: transparent !important;
+	border-bottom: 1px solid $balanced !important;
+	color: $balanced !important;
+}
+
+form, select {
+	background: transparent !important;
+}
+
+.input-label {}
+.transparent-stable {}
+.item {
+	border-color: $balanced;
+}
+
+.card, .list-inset {
+	background-color: transparent !important;
+	border: $balanced 1px solid !important;
+	color: $balanced;
+}
+
+.item, .item-complex .item-content, .item-radio .item-content, .card, .list-inset {
+	background-color: transparent !important;
+}
+
+.assertive-bg {
+	background-color: $assertive !important;
+	color: $stable !important;
+	border: $assertive !important;
+}
+
+ion-view,.pane,.view {
+	background-color: #000000;
+}
+
+body {
+	color: #33CD5F;
+}
+

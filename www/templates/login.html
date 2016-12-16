@@ -1,0 +1,35 @@
+<ion-view title="Login" hide-nav-bar="true" cache-view="false" nav-transition="none" id="page8">
+  <ion-content padding="true" style="background: url(img/FVVY41JeSsSHPazw4MIF_matrix-code.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding" scroll="false">
+    <form id="login-form1" class="list login-input">
+      <div class="spacer" style="height: 40px;"></div>
+      <div>
+        <img src="img/UdcrSFEwQuqddxLEEtCu_wechaty-logo-trans-nomargin-white.png" style="display: block; width: 80%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <div class="spacer" style="height: 40px;"></div>
+      <ion-list id="login-list2">
+        <label class="item item-input item-floating-label" id="login-input1">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="Email" ng-model="data.email">
+        </label>
+        <label class="item item-input item-floating-label" id="login-input2">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="Password" ng-model="data.password">
+        </label>
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <div id="login-markdown3" ng-if="error" class="show-list-numbers-and-dots error-box">
+        <p style="color:#FF0000;">{{ error }}</p>
+      </div>
+      <button id="login-button2" ng-click="login()" class="button button-balanced  button-block">Log in</button>
+    </form>
+    <div align="center">
+      <a ui-sref="signup" class="stable">
+        Or create an account
+      </a>
+
+      <a ui-sref="welcome">
+        <i class="icon ion-social-github stable"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

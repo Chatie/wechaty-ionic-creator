@@ -1,0 +1,81 @@
+<ion-view title="Botie" id="page17">
+  <ion-content padding="true" class=" manual-remove-top-padding has-header">
+    <ion-list id="botie-list16" class="manual-list-fullwidth">
+      <ion-item class="item-icon-left  item-borderless" id="botie-list-item27">
+        <i class="icon ion-help" ng-class="botie.status ? 'ion-social-android' : 'ion-social-android-outline'"></i>{{ botie.nick }}</ion-item>
+    </ion-list>
+    <div id="botie-markdown9" class="show-list-numbers-and-dots">
+      <p>Status: {{ botie.status ? 'Ready' : 'Standby' }}</p>
+
+      <p>Create: {{ botie.createTime }}</p>
+
+      <p>Memo: {{ botie.memo }}</p>
+    </div>
+    <ion-list id="botie-list17">
+      <div class="item item-body" id="botie-list-item-container9" ng-if="hostie.status">
+        <form id="botie-form13" class="list">
+          <div id="botie-markdown19" class="show-list-numbers-and-dots">
+            <p style="margin-top:0px;">Botie is assembled:</p>
+          </div>
+          <label class="item item-select" id="botie-select2">
+            <span class="input-label">by chatie</span>
+            <select>
+              <option ng-repeat="chatie in chatieList">{{ chatie.nick }}</option>
+            </select>
+          </label>
+        </form>
+      </div>
+      <ion-item class="item-divider" id="botie-list-item-divider15"> Status</ion-item>
+      <ion-item class="item-icon-left" id="botie-list-item28">
+        <i class="icon ion-heart"></i>Heartbeat
+        <span class="item-note">at 10:49:03</span>
+      </ion-item>
+      <ion-item class="range range-balanced" id="botie-range3">Life
+        <input type="range" value="50" min="0" max="100" step="1">
+      </ion-item>
+      <ion-item class="item-divider" id="botie-list-item-divider16"> </ion-item>
+      <ion-item class="item-icon-left" id="botie-list-item29" ng-repeat="event in eventList">
+        <i class="icon No Icon" ng-class="event.icon"></i>{{ event.text }}
+        <span class="item-note">at {{ event.time }}</span>
+      </ion-item>
+      <ion-item class="item-divider" id="botie-list-item-divider17"> </ion-item>
+      <ion-item class="item-icon-left energized" id="botie-list-item33">
+        <i class="icon ion-qr-scanner"></i>QR Code
+        <span class="item-note">at 10:49:03</span>
+      </ion-item>
+      <ion-item class="item-icon-left balanced" id="botie-list-item34">
+        <i class="icon ion-log-in"></i>Login
+        <span class="item-note">at 10:49:03</span>
+      </ion-item>
+      <ion-item class="item-icon-left balanced" id="botie-list-item36">
+        <i class="icon ion-chatbox-working"></i>Message
+        <span class="item-note">at 10:49:03</span>
+      </ion-item>
+      <ion-item class="item-icon-left balanced" id="botie-list-item37">
+        <i class="icon ion-log-out"></i>Logout
+        <span class="item-note">at 10:49:03</span>
+      </ion-item>
+      <ion-item class="item-icon-left assertive" id="botie-list-item39">
+        <i class="icon ion-alert"></i>Error
+        <span class="item-note">at 10:49:03</span>
+      </ion-item>
+    </ion-list>
+    <div class="item item-body" id="botie-list-item-container10">
+      <div id="botie-markdown22" class="show-list-numbers-and-dots">
+        <p style="margin-top:0px;color:#000000;">Last 5 Event Log</p>
+      </div>
+      <ion-list id="botie-list18">
+        <ion-item class="item-icon-left" id="botie-list-item43">
+          <i class="icon ion-ionic"></i>Item</ion-item>
+      </ion-list>
+      <ion-list id="botie-list19">
+        <ion-item class="item-icon-left" id="botie-list-item44">
+          <i class="icon ion-qr-scanner"></i>Scan</ion-item>
+      </ion-list>
+      <div>
+        <img src="img/MiOqyUzLTDSUdcp2xo9O_blob" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+    </div>
+    <div class="spacer" style="height: 100px;"></div>
+  </ion-content>
+</ion-view>

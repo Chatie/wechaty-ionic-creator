@@ -1,0 +1,39 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21" style="background-color:#242A24;">
+    <ion-content padding="false" style="top:0px !important;" class="side-menu-left ">
+      <div class="spacer" style="width: 268px; height: 13px;"></div>
+      <div class="profile-image night-vision-effect">
+        <img src="img/5vXBQD8sSCe1xf2yBep1_icon-white.png" style="display: block; width: 100px; height: auto; margin-left: auto; margin-right: auto;" gravatar-src="userData.email" gravatar-size="200">
+      </div>
+      <div id="menu-markdown5" style="text-align:center;" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">{{ userData.name }}</p>
+      </div>
+      <ion-list id="menu-list1">
+        <ion-item class="item-icon-left  site-menu-item" id="menu-list-item1" ui-sref="menu.dashboard" menu-close="">
+          <i class="icon ion-speedometer"></i>Dashboard</ion-item>
+        <ion-item class="item-divider" id="menu-list-item-divider11"> </ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item13" ui-sref="menu.giftieList" menu-close="">
+          <i class="icon ion-flash"></i>Giftie</ion-item>
+        <ion-item class="item-icon-left balanced" id="menu-list-item9" ui-sref="menu.botieList" menu-close="">
+          <i class="icon ion-social-android-outline"></i>Botie</ion-item>
+        <ion-item class="item-icon-left positive" id="menu-list-item2" ui-sref="menu.hostieList" menu-close="">
+          <i class="icon ion-ios-home-outline"></i>Hostie</ion-item>
+        <ion-item class="item-divider" id="menu-list-item-divider12"> </ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item3" ui-sref="menu.setting" menu-close="">
+          <i class="icon ion-ios-gear-outline"></i>Setting</ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item20" ui-sref="menu.feedback" menu-close="">
+          <i class="icon ion-ios-people-outline"></i>Feedback</ion-item>
+      </ion-list>
+      <div class="spacer" style="height: 100px;"></div>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
