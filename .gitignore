@@ -42,3 +42,5 @@ platforms/
 plugins/
 .DS_Store
 res/
+.io-config.json
+.idea/
