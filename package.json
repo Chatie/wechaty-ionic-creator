@@ -20,7 +20,10 @@
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-splashscreen",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-crosswalk-webview",
+    "ionic-plugin-deploy",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "ios",
@@ -28,6 +31,11 @@
       "platform": "ios",
       "version": "",
       "locator": "ios"
+    },
+    {
+      "platform": "android",
+      "version": "",
+      "locator": "android"
     }
   ]
 }
