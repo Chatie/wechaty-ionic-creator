@@ -38,6 +38,15 @@ jspm_packages
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+plugins/
+.DS_Store
+res/
+.io-config.json
+.idea/
+
+#
+# Fastlane ignores
+#
 platforms/*
 
 !platforms/ios/
@@ -48,22 +57,12 @@ platforms/ios/*
 platforms/android/*
 !platforms/android/fastlane/
 
-plugins/
-.DS_Store
-res/
-.io-config.json
-.idea/
-
 # fastlane specific
 platforms/*/fastlane/report.xml
-
 # deliver temporary files
 platforms/*/fastlane/Preview.html
-
 # snapshot generated screenshots
 platforms/*/fastlane/screenshots/
-
-
 # scan temporary files
 platforms/*/fastlane/test_output
 
