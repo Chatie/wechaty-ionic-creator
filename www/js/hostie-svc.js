@@ -1,8 +1,8 @@
-angular.module('chatie', [])
+angular.module('hostie', [])
 
-.service('ChatieSvc', [function(){
+.service('HostieSvc', [function(){
 
-    const chatieList = [
+    const hostieList = [
         {
             id: 1,
             token: '111',
@@ -26,7 +26,7 @@ angular.module('chatie', [])
     ]
 
     return {
-        chatieList: chatieList,
+        hostieList: hostieList,
 
         add: add,
         del: del,
@@ -36,7 +36,7 @@ angular.module('chatie', [])
 
     function add(hostie) {
         let maxId = 1
-        chatieList.forEach(hostie => {
+        hostieList.forEach(hostie => {
             if (hostie.id > maxId) {
                 maxId = hostie.id
             }
@@ -44,14 +44,14 @@ angular.module('chatie', [])
         hostie.id = maxId + 1
 
         console.log(hostie)
-        chatieList.push(hostie)
-        console.log(chatieList)
+        hostieList.push(hostie)
+        console.log(hostieList)
     }
 
     function del(id) {
-        const lenBefore = chatieList.length
-        chatieList = chatieList.filter(hostie => hostie.id !== id)
-        const lenAfter = chatieList.length
+        const lenBefore = hostieList.length
+        hostieList = hostieList.filter(hostie => hostie.id !== id)
+        const lenAfter = hostieList.length
 
         return lenAfter < lenBefore
     }
@@ -65,15 +65,15 @@ angular.module('chatie', [])
     }
 
     function list(id) {
-        console.log(chatieList)
+        console.log(hostieList)
 
         if (typeof id !== 'undefined') {
-            const result = chatieList.filter(hostie => hostie.id == id)
+            const result = hostieList.filter(hostie => hostie.id == id)
             if (result.length) {
                 return result[0]
             }
             return null
         }
-       return chatieList
+       return hostieList
     }
 }]);

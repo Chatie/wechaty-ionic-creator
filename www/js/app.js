@@ -16,7 +16,7 @@ angular.module('app', [
   'gravatar',
   'luegg.directives',
   // 'wilddog',
-  'chatie',
+  'hostie',
   'botie',
   ]
 )

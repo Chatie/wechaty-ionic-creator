@@ -1,30 +1,30 @@
 angular.module('app.controllers', [])
-  
-.controller('dashboardCtrl', ['$scope', '$stateParams', 'BotieSvc', 'ChatieSvc', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+
+.controller('dashboardCtrl', ['$scope', '$stateParams', 'BotieSvc', 'HostieSvc', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, BotieSvc, ChatieSvc) {
+function ($scope, $stateParams, BotieSvc, HostieSvc) {
 
-    $scope.chatieList = ChatieSvc.chatieList
+    $scope.hostieList = HostieSvc.hostieList
     $scope.botieList = BotieSvc.botieList
-    
-    $scope.activeChatieNum = $scope.chatieList.filter(c => c.status).length
+
+    $scope.activeHostieNum = $scope.hostieList.filter(c => c.status).length
 
     $scope.activeBotieNum = $scope.botieList.filter(b => b.status).length
 }])
-   
-.controller('hostieListCtrl', ['$scope', '$stateParams', 'ChatieSvc', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+
+.controller('hostieListCtrl', ['$scope', '$stateParams', 'HostieSvc', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, ChatieSvc) {
+function ($scope, $stateParams, HostieSvc) {
 
-    $scope.chatieList = ChatieSvc.chatieList
-    
-    $scope.chatieList.forEach(c => {
+    $scope.hostieList = HostieSvc.hostieList
+
+    $scope.hostieList.forEach(c => {
         console.log(c)
     })
 }])
-   
+
 .controller('botieListCtrl', ['$scope', '$stateParams', 'BotieSvc', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -34,27 +34,27 @@ function ($scope, $stateParams, BotieSvc) {
 
     $scope.showDelete = false
     $scope.showReorder = false
-    
+
     $scope.toggle = function(v) {
         $scope[v] = !$scope[v]
     }
-    
+
     $scope.delete = function(item) {
         BotieSvc.del(item)
         $scope.showDelete = false
     }
-    
+
     $scope.reorder = function(item, fromIndex, toIndex) {
         $scope.botieList.splice(fromIndex, 1)
         $scope.botieList.splice(toIndex, 0, item)
         $scope.showReorder = false
     }
-    
+
     $scope.share = function(item) {
         alert('share: ' + item)
     }
 }])
-   
+
 .controller('statusCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -62,7 +62,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('menuCtrl', ['$scope', '$stateParams', '$ionicUser', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -71,7 +71,7 @@ function ($scope, $stateParams, $ionicUser) {
     $scope.userData = $ionicUser.details
 
 }])
-   
+
 .controller('welcomeCtrl', ['$scope', '$stateParams', '$ionicUser', '$ionicAuth', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -93,7 +93,7 @@ function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
 	    })
 	}
 }])
-   
+
 .controller('settingCtrl', ['$scope', '$stateParams', '$ionicUser', '$ionicAuth', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -103,26 +103,26 @@ function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
 		$state.go('welcome')
 	}
 }])
-   
+
 .controller('feedbackCtrl', ['$scope', '$stateParams', '$ionicUser', '$wilddogArray', '$ionicAuth', '$state', function ($scope, $stateParams, $ionicUser, $wilddogArray, $ionicAuth, $state) {
-    
+
     $scope.data = {
         message: ''
     }
-    
+
     var config = {
       syncURL: "https://wechaty.wilddogio.com" //输入节点 URL
     }
     wilddog.initializeApp(config)
-    
+
     // var ref = new Wilddog("https://wechaty.wilddogio.com/messages")
     var ref = wilddog.sync().ref().child('messages')
     $scope.messages = $wilddogArray(ref)
-    
+
     // add new items to the array
     // the message is automatically added to our Firebase database!
     $scope.addMessage = function() {
-        
+
         if (!$ionicAuth.isAuthenticated()) {
             $state.go('welcome')
             return
@@ -134,13 +134,13 @@ function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
             email: $ionicUser.details.email,
             name: $ionicUser.details.name,
         }
-        
+
         $scope.messages.$add(newMessage);
         $scope.data.message = '';
     };
 
 }])
-   
+
 .controller('helpCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -148,7 +148,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('loginCtrl', ['$scope', '$stateParams', '$ionicUser', '$ionicAuth', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -171,7 +171,7 @@ function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
 		.catch(e => $scope.error = 'Error logging in.')
 	}
 }])
-   
+
 .controller('signupCtrl', ['$scope', '$stateParams', '$ionicAuth', '$ionicUser', '$state', function ($scope, $stateParams, $ionicAuth, $ionicUser, $state) {
 	$scope.data = {
 		name: '',
@@ -199,7 +199,7 @@ function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
 		})
 	}
 }])
-   
+
 .controller('aboutCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -207,26 +207,26 @@ function ($scope, $stateParams) {
 
 
 }])
-   
-.controller('chatieNickCtrl', ['$scope', '$stateParams', 'ChatieSvc', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+
+.controller('hostieNickCtrl', ['$scope', '$stateParams', 'HostieSvc', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, ChatieSvc) {
+function ($scope, $stateParams, HostieSvc) {
 
     const id = $stateParams.id
 
-    chatie = ChatieSvc.list(id)
-    
-    $scope.chatie = chatie
-    if (chatie.runtime) {
-        $scope.icon = icon(chatie.runtime)
+    hostie = HostieSvc.list(id)
+
+    $scope.hostie = hostie
+    if (hostie.runtime) {
+        $scope.icon = icon(hostie.runtime)
     }
 
-    Object.assign($scope, chatie)
-    
+    Object.assign($scope, hostie)
+
     // console.log($scope)
     return
-    
+
     function icon(runtime) {
         switch (runtime) {
             case 'win32': return 'ion-social-windows-outline'
@@ -236,21 +236,21 @@ function ($scope, $stateParams, ChatieSvc) {
         }
     }
 }])
-   
-.controller('botieCtrl', ['$scope', '$stateParams', 'ChatieSvc', 'BotieSvc', function ($scope, $stateParams, ChatieSvc, BotieSvc) {
+
+.controller('botieCtrl', ['$scope', '$stateParams', 'HostieSvc', 'BotieSvc', function ($scope, $stateParams, HostieSvc, BotieSvc) {
 
     const id = $stateParams.id
 
     botie = BotieSvc.list(id)
-    chatieList = ChatieSvc.list()
-    
-    $scope.chatieList = chatieList
+    hostieList = HostieSvc.list()
+
+    $scope.hostieList = hostieList
     $scope.botie = botie
 
-    $scope.eventList = makeEventList()    
+    $scope.eventList = makeEventList()
 
     return
-    
+
     function makeEventList() {
         return botie.eventList.map(e => {
             return {
@@ -262,7 +262,7 @@ function ($scope, $stateParams, ChatieSvc) {
             }
         })
     }
-    
+
     function typeIconColor(type) {
         switch (type) {
             case 'scan': return ['ion-qr-scanner', 'balanced']
@@ -270,38 +270,38 @@ function ($scope, $stateParams, ChatieSvc) {
             case 'logout': return ['ion-log-out', 'balanced']
             case 'message': return ['ion-chatbox-working', 'balanced']
             case 'error': return ['ion-alert', 'balanced']
-            default: 
+            default:
                 return ['ion-help', 'balanced']
         }
     }
 }])
-   
-.controller('newChatieCtrl', ['$scope', '$stateParams', 'ChatieSvc', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+
+.controller('newHostieCtrl', ['$scope', '$stateParams', 'HostieSvc', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, ChatieSvc, $state) {
+function ($scope, $stateParams, HostieSvc, $state) {
 
     $scope.data = {
         token: '',
         nick: '',
     }
-    
+
     $scope.create = function() {
-        
+
         console.log($scope)
-        
-        const newChatie = {
+
+        const newHostie = {
             token: $scope.data.token,
             nick: $scope.data.nick,
             createTime: Date.now()
         }
 
-        ChatieSvc.add(newChatie)
-        
-        $state.go('menu.chatieList')
+        HostieSvc.add(newHostie)
+
+        $state.go('menu.hostieList')
     }
 }])
-   
+
 .controller('newBotieCtrl', ['$scope', '$stateParams', 'BotieSvc', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -311,21 +311,21 @@ function ($scope, $stateParams, BotieSvc, $state) {
         nick: '',
         memo: '',
     }
-    
+
     $scope.create = function() {
         const newBotie = {
             nick: $scope.data.nick,
             memo: $scope.data.memo,
         }
         BotieSvc.add(newBotie)
-        
+
         $state.go('menu.botieList')
     }
-    
+
     return
 
 }])
-   
+
 .controller('giftieListCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -333,7 +333,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('unlockProFeaturesCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -341,4 +341,3 @@ function ($scope, $stateParams) {
 
 
 }])
- 

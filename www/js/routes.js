@@ -7,8 +7,8 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
+
+
 
       .state('menu.dashboard', {
     url: '/dashboard',
@@ -114,15 +114,15 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.chatieNick', {
-    url: '/chatie',
+  .state('menu.hostieNick', {
+    url: '/hostie',
 	params: {
-		id: ""		
+		id: ""
 },
     views: {
       'side-menu21': {
-        templateUrl: 'templates/chatieNick.html',
-        controller: 'chatieNickCtrl'
+        templateUrl: 'templates/hostieNick.html',
+        controller: 'hostieNickCtrl'
       }
     }
   })
@@ -130,7 +130,7 @@ angular.module('app.routes', [])
   .state('menu.botie', {
     url: '/botie',
 	params: {
-		id: ""		
+		id: ""
 },
     views: {
       'side-menu21': {
@@ -140,12 +140,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.newChatie', {
-    url: '/new-chatie',
+  .state('menu.newHostie', {
+    url: '/new-hostie',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/newChatie.html',
-        controller: 'newChatieCtrl'
+        templateUrl: 'templates/newHostie.html',
+        controller: 'newHostieCtrl'
       }
     }
   })
@@ -182,6 +182,6 @@ angular.module('app.routes', [])
 
 $urlRouterProvider.otherwise('/welcome')
 
-  
+
 
 });

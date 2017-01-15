@@ -1,0 +1,35 @@
+<ion-view title="Hostie: {{ nick }}" id="page13">
+  <ion-content padding="true" class=" manual-remove-top-padding has-header">
+    <ion-list id="hostieNick-list9" class="manual-list-fullwidth">
+      <ion-item class="item-icon-left dark  item-borderless" id="hostieNick-list-item24">
+        <i class="icon ion-ios-cloud-upload-outline" ng-class="status ? 'balanced' : ''"></i>{{ nick }}
+        <span class="item-note">uptime {{ Date.now() - createTime }} secs</span>
+      </ion-item>
+    </ion-list>
+    <div id="hostieNick-markdown20" class="show-list-numbers-and-dots">
+      <p>Status: {{ status ? 'Online' : 'Offline' }}</p>
+
+      <p>Create: {{ createTime }}</p>
+    </div>
+    <ion-list id="hostieNick-list11">
+      <div class="item item-body" id="hostieNick-list-item-container6" ng-if="hostie.status">
+        <div id="hostieNick-markdown27" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">Hostie environment:</p>
+        </div>
+        <ion-list id="hostieNick-list23">
+          <ion-item class="item-icon-right" id="hostieNick-list-item42">Wechaty v{{ version }}
+            <i class="icon ion-help" ng-class="icon"></i>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-list>
+    <div class="spacer" style="width: 268px; height: 27px;"></div>
+    <ion-list id="hostieNick-list22">
+      <ion-item class="item-divider" id="hostieNick-list-item-divider10"> Token</ion-item>
+      <ion-item class="item-icon-right" id="hostieNick-list-item38">{{ hostie.token }}
+        <i class="icon ion-ios-copy-outline"></i>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height: 100px;"></div>
+  </ion-content>
+</ion-view>
