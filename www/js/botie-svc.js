@@ -36,7 +36,7 @@ angular.module('botie', [])
                     time: '10:01',
                     data: 'fasdfas'
                 },
-                
+
             ]
         },
         {
@@ -62,14 +62,14 @@ angular.module('botie', [])
     ]
 
     return {
-        botieList: botieList,
-                
-        add: add,
-        del: del,
-        edit: edit,
-        list: list,
+        botieList,
+
+        add,
+        del,
+        edit,
+        list,
     }
-    
+
     function nextId() {
         let maxId = 1
         botieList.forEach(botie => {
@@ -79,19 +79,19 @@ angular.module('botie', [])
         })
         return maxId + 1
     }
-    
+
     function add(newBotie) {
         Object.assign(newBotie, {
             id: nextId(),
             createTime: Date.now(),
             eventList: [],
-            
+
         })
         console.log(newBotie)
 
         botieList.push(newBotie)
     }
-    
+
     function del(delBotie) {
         console.log(delBotie)
         const index = botieList.indexOf(delBotie)
@@ -100,13 +100,13 @@ angular.module('botie', [])
             return true
         }
         return false
-        
+
         // const numBefore = botieList.length
         // botieList = botieList.filter(c => c.id == delBotie.id)
         // const numAfter = botieList.length
         // return numBefore - numAfter
     }
-    
+
     function edit(editBotie) {
         console.log(botie)
         const result = botieList.filter(c => c.id == editChattie.id)
@@ -116,7 +116,7 @@ angular.module('botie', [])
         }
         return false
     }
-    
+
     function list(id) {
         console.log('BotieSvc() list(' + id + ')')
         console.log(botieList)
@@ -127,8 +127,8 @@ angular.module('botie', [])
             }
             return null
         }
-        
+
        return botieList
     }
-    
+
 }]);

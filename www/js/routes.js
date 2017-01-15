@@ -114,15 +114,15 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.hostieNick', {
+  .state('menu.hostieDetail', {
     url: '/hostie',
 	params: {
 		id: ""
 },
     views: {
       'side-menu21': {
-        templateUrl: 'templates/hostieNick.html',
-        controller: 'hostieNickCtrl'
+        templateUrl: 'templates/hostie-detail.html',
+        controller: 'hostieDetailCtrl'
       }
     }
   })

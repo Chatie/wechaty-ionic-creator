@@ -2,7 +2,7 @@
   <ion-content padding="false" class="has-header">
     <div id="hostieList-markdown10" class="show-list-numbers-and-dots"></div>
     <ion-list id="hostieList-list20">
-      <ion-item class="item-icon-left" id="hostieList-list-item18" ui-sref="menu.hostieNick({&quot;id&quot;:&quot;&quot;+ hostie.id +&quot;&quot;})" ng-repeat="hostie in hostieList">
+      <ion-item class="item-icon-left" id="hostieList-list-item18" ui-sref="menu.hostieDetail({&quot;id&quot;:&quot;&quot;+ hostie.id +&quot;&quot;})" ng-repeat="hostie in hostieList">
         <i class="icon ion-help" ng-class="hostie.status ? 'ion-ios-cloud-upload' : 'ion-ios-cloud-upload-outline'"></i>{{ hostie.nick }}</ion-item>
     </ion-list>
     <a ui-sref="menu.newHostie" id="hostieList-button8" class="button button-balanced  button-full button-clear icon ion-android-add"></a>
