@@ -5,10 +5,24 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services','ionic.cloud','ionic.cloud.init','gravatar','luegg.directives','wilddog','chatie','botie',])
+angular.module('app', [
+  'ionic',
+  'app.controllers',
+  'app.routes',
+  'app.directives',
+  'app.services',
+  'ionic.cloud',
+  'ionic.cloud.init',
+  'gravatar',
+  'luegg.directives',
+  // 'wilddog',
+  'chatie',
+  'botie',
+  ]
+)
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
-  
+
 
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
 
@@ -35,7 +49,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 */
 .directive('disableSideMenuDrag', ['$ionicSideMenuDelegate', '$rootScope', function($ionicSideMenuDelegate, $rootScope) {
     return {
-        restrict: "A",  
+        restrict: "A",
         controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
 
             function stopDrag(){

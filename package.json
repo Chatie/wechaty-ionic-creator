@@ -1,7 +1,7 @@
 {
-  "name": "wechaty-creator",
+  "name": "wechaty-ionic-creator",
   "version": "0.0.1",
-  "description": "wechaty-creator: An Ionic project",
+  "description": "wechaty-ionic-creator: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
