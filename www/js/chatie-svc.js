@@ -27,13 +27,13 @@ angular.module('chatie', [])
 
     return {
         chatieList: chatieList,
-        
+
         add: add,
         del: del,
         edit: edit,
         list: list
     }
-    
+
     function add(hostie) {
         let maxId = 1
         chatieList.forEach(hostie => {
@@ -42,20 +42,20 @@ angular.module('chatie', [])
             }
         })
         hostie.id = maxId + 1
-        
+
         console.log(hostie)
         chatieList.push(hostie)
         console.log(chatieList)
     }
-    
+
     function del(id) {
         const lenBefore = chatieList.length
         chatieList = chatieList.filter(hostie => hostie.id !== id)
         const lenAfter = chatieList.length
-        
+
         return lenAfter < lenBefore
     }
-    
+
     function edit(hostie) {
         if (del(hostie.id)) {
             add(hostie)
@@ -63,10 +63,10 @@ angular.module('chatie', [])
         }
         return false
     }
-    
+
     function list(id) {
         console.log(chatieList)
-        
+
         if (typeof id !== 'undefined') {
             const result = chatieList.filter(hostie => hostie.id == id)
             if (result.length) {
