@@ -39,8 +39,15 @@ jspm_packages
 # http://git-scm.com/docs/gitignore
 
 platforms/*
-!platforms/ios/fastlane
-!platforms/android/fastlane
+
+!platforms/ios/
+platforms/ios/*
+!platforms/ios/fastlane/
+
+!platforms/android/
+platforms/android/*
+!platforms/android/fastlane/
+
 plugins/
 .DS_Store
 res/
@@ -48,14 +55,15 @@ res/
 .idea/
 
 # fastlane specific
-fastlane/report.xml
+platforms/*/fastlane/report.xml
 
 # deliver temporary files
-fastlane/Preview.html
+platforms/*/fastlane/Preview.html
 
 # snapshot generated screenshots
-fastlane/screenshots
+platforms/*/fastlane/screenshots/
+
 
 # scan temporary files
-fastlane/test_output
+platforms/*/fastlane/test_output
 

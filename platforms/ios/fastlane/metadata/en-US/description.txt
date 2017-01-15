@@ -1,0 +1,5 @@
+Connecting ChatBots!
+
+Wechaty is a Last-Mile Technology for bringing ChatBot to End Users, a ChatBot Framework for Business.
+
+Our goal is to help you straight forward implement your business logic and keep focus, without the care about any unrelated complex dirty underwater works.

@@ -1,0 +1,2 @@
+json_key_file "/Users/zixia/Dropbox/Project/2016\ Wechaty/Google\ Play\ Android\ Developer-917d46ee5b02.json" # Path to the json secret file - Follow https://github.com/fastlane/supply#setup to get one
+package_name "io.wechaty.app" # e.g. com.krausefx.app
