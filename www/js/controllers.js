@@ -168,7 +168,7 @@ function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
 		$ionicAuth.login('basic', $scope.data)
 		.then(() => $ionicUser.load())
 		.then(() => $state.go('menu.dashboard'))
-		.catch(e => $scope.error = 'Error logging in.')
+		.catch(e => $scope.error = 'Error logging in:' + e.message)
 	}
 }])
 
